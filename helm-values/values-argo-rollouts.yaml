@@ -1,0 +1,6 @@
+# -- Keep CRD's on helm uninstall
+keepCRDs: false
+
+controller:
+  # -- The number of controller pods to run
+  replicas: 1
