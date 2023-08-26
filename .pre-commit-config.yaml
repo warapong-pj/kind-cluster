@@ -7,7 +7,7 @@ repos:
   - id: trailing-whitespace
   - id: end-of-file-fixer
   - id: check-yaml
-    exclude: helm-chart/grafana/templates
+    exclude: helm-chart/grafana/templates.*|helm-chart/opensearch/templates.*|helm-chart/opensearch-dashboards/templates.*
   - id: check-added-large-files
 - repo: https://github.com/gruntwork-io/pre-commit
   rev: v0.1.18 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
