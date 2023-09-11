@@ -9,6 +9,7 @@ repos:
   - id: check-yaml
     exclude: ^helm-chart/
   - id: check-added-large-files
+    args: ['--maxkb=10000']
 - repo: https://github.com/gruntwork-io/pre-commit
   rev: v0.1.18 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
   hooks:
