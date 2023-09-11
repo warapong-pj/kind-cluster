@@ -7,7 +7,7 @@ repos:
   - id: trailing-whitespace
   - id: end-of-file-fixer
   - id: check-yaml
-    exclude: ^(grafana/templates|opensearch/templates|opensearch-dashboards/templates|fluent-bit/templates)$
+    exclude: ^helm-chart/
   - id: check-added-large-files
 - repo: https://github.com/gruntwork-io/pre-commit
   rev: v0.1.18 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
