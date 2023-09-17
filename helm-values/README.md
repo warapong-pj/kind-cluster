@@ -11,6 +11,11 @@
 2. helm install metrics-server metrics-server/metrics-server --values values-metrics-server.yaml --namespace kube-system --version 3.11.0
 
 # install node-exporter, kube-state-metrics and prometheus
-1. helm install prometheus-node-exporter prometheus-community/prometheus-node-exporter --namespace mgmt --version 4.23.0
-2. helm install kube-state-metrics prometheus-community/kube-state-metrics --namespace mgmt --version 5.12.1
-3. helm install prometheus prometheus-community/prometheus --values values-prometheus.yaml --namespace mgmt --version 24.4.0
+1. helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+2. helm install prometheus-node-exporter prometheus-community/prometheus-node-exporter --namespace mgmt --version 4.23.0
+3. helm install kube-state-metrics prometheus-community/kube-state-metrics --namespace mgmt --version 5.12.1
+4. helm install prometheus prometheus-community/prometheus --values values-prometheus.yaml --namespace mgmt --version 24.4.0
+5. helm repo add grafana https://grafana.github.io/helm-charts
+6. helm install grafana grafana/grafana --values values-grafana.yaml --namespace mgmt --version 6.59.3
+
+# install fluent-bit and opensearch
