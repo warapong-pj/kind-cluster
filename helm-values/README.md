@@ -9,3 +9,8 @@
 # install metrics-server
 1. helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/
 2. helm install metrics-server metrics-server/metrics-server --values values-metrics-server.yaml --namespace kube-system --version 3.11.0
+
+# install node-exporter, kube-state-metrics and prometheus
+1. helm install prometheus-node-exporter prometheus-community/prometheus-node-exporter --namespace mgmt --version 4.23.0
+2. helm install kube-state-metrics prometheus-community/kube-state-metrics --namespace mgmt --version 5.12.1
+3. helm install prometheus prometheus-community/prometheus --values values-prometheus.yaml --namespace mgmt --version 24.4.0
