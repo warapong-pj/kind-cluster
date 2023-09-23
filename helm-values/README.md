@@ -33,3 +33,9 @@
 3. helm install opensearch-dashboards opensearch-project-helm-charts/opensearch-dashboards --namespace mgmt --version 2.11.1
 4. helm repo add fluent https://fluent.github.io/helm-charts
 5. helm install fluent-bit fluent/fluent-bit --values values-fluent-bit.yaml --namespace mgmt --version 0.37.0
+
+# install gatekeeper
+1. helm repo add gatekeeper https://open-policy-agent.github.io/gatekeeper/charts
+2. helm install gatekeeper gatekeeper/gatekeeper --values values-gatekeeper.yaml --namespace gatekeeper-system  --version 3.13.0
+### policy library
+- https://open-policy-agent.github.io/gatekeeper-library/website/
