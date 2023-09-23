@@ -26,10 +26,15 @@
 1. helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 2. helm install alertmanager prometheus-community/alertmanager --values values-alertmanager.yaml --namespace mgmt --version 1.5.0
 
-
 # install fluent-bit and opensearch
 1. helm repo add opensearch-project-helm-charts https://opensearch-project.github.io/helm-charts
 2. helm install opensearch opensearch-project-helm-charts/opensearch --values values-opensearch.yaml --namespace mgmt --version 2.14.1
 3. helm install opensearch-dashboards opensearch-project-helm-charts/opensearch-dashboards --namespace mgmt --version 2.11.1
 4. helm repo add fluent https://fluent.github.io/helm-charts
 5. helm install fluent-bit fluent/fluent-bit --values values-fluent-bit.yaml --namespace mgmt --version 0.37.0
+
+# install vault and secret store csi driver
+1. helm repo add hashicorp https://helm.releases.hashicorp.com
+2. helm install vault hashicorp/vault --values values-vault.yaml --version 0.24.1
+3. helm repo add secret-store-csi-driver https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
+4. helm install secrets-store-csi-driver secret-store-csi-driver/secrets-store-csi-driver --version 1.3.3
