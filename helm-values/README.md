@@ -1,3 +1,7 @@
+# install cilium
+1. helm repo add cilium https://helm.cilium.io/
+2. helm install cilium cilium/cilium --values values-cilium.yaml --namespace kube-system --version 1.14.2
+
 # install argo cd and argo rollouts
 1. kubectl create namespace mgmt
 2. helm repo add argo https://argoproj.github.io/argo-helm
@@ -17,6 +21,11 @@
 4. helm install prometheus prometheus-community/prometheus --values values-prometheus.yaml --namespace mgmt --version 24.4.0
 5. helm repo add grafana https://grafana.github.io/helm-charts
 6. helm install grafana grafana/grafana --values values-grafana.yaml --namespace mgmt --version 6.59.3
+
+# install alertmanager
+1. helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+2. helm install alertmanager prometheus-community/alertmanager --values values-alertmanager.yaml --namespace mgmt --version 1.5.0
+
 
 # install fluent-bit and opensearch
 1. helm repo add opensearch-project-helm-charts https://opensearch-project.github.io/helm-charts

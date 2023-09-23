@@ -13,3 +13,7 @@ repos:
   rev: v0.1.18 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
   hooks:
   - id: helmlint
+- repo: https://github.com/Yelp/detect-secrets
+  rev: v1.4.0
+  hooks:
+  - id: detect-secrets
