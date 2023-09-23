@@ -3,3 +3,6 @@ kind: Cluster
 nodes:
 - role: control-plane
   image: kindest/node:v1.25.3
+networking:
+  disableDefaultCNI: true
+  kubeProxyMode: none
