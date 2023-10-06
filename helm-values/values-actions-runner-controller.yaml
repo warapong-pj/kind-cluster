@@ -1,0 +1,4 @@
+# Metrics service resource
+metrics:
+  proxy:
+    enabled: false

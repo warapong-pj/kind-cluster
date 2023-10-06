@@ -44,3 +44,10 @@
 2. helm install gatekeeper gatekeeper/gatekeeper --values values-gatekeeper.yaml --namespace gatekeeper-system  --version 3.13.0
 ### policy library
 - https://open-policy-agent.github.io/gatekeeper-library/website/
+
+# install actions-runner-controller
+1. helm repo add cert-manager https://charts.jetstack.io
+2. helm install cert-manager cert-manager/cert-manager --values values-cert-manager.yaml --namespace mgmt --version 1.13.0
+3. helm repo add actions-runner-controller https://actions-runner-controller.github.io/actions-runner-controller
+4. kubectl create secret generic controller-manager -n mgmt --from-literal=github_token=<GITHUB_PERSONAL_TOKEN>
+5. helm install actions-runner-controller actions-runner-controller/actions-runner-controller --namespace mgmt --version 0.23.4
