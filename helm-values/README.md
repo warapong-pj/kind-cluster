@@ -44,3 +44,7 @@
 2. helm install gatekeeper gatekeeper/gatekeeper --values values-gatekeeper.yaml --namespace gatekeeper-system  --version 3.13.0
 ### policy library
 - https://open-policy-agent.github.io/gatekeeper-library/website/
+
+# install chaos mesh
+1. helm repo add chaos-mesh https://charts.chaos-mesh.org
+2. helm install chaos-mesh chaos-mesh/chaos-mesh --values values-chaos-mesh.yaml --namespace mgmt --version 2.5.2
