@@ -52,3 +52,7 @@
 4. helm repo add actions-runner-controller https://actions-runner-controller.github.io/actions-runner-controller
 5. kubectl create secret generic controller-manager -n mgmt --from-literal=github_token=<GITHUB_PERSONAL_TOKEN>
 6. helm install actions-runner-controller actions-runner-controller/actions-runner-controller --values values-actions-runner-controller.yaml --namespace mgmt --version 0.23.4
+
+# install chaos mesh
+1. helm repo add chaos-mesh https://charts.chaos-mesh.org
+2. helm install chaos-mesh chaos-mesh/chaos-mesh --values values-chaos-mesh.yaml --namespace mgmt --version 2.5.2
