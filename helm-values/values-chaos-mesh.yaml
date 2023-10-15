@@ -1,0 +1,7 @@
+controllerManager:
+  # Replicas for chaos-controller-manager
+  replicaCount: 1
+
+dashboard:
+  # Enable chaos-dashboard
+  create: false
