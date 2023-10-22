@@ -1,4 +1,10 @@
 controller:
+
+  # -- Additional command line arguments to pass to Ingress-Nginx Controller
+  # E.g. to specify the default SSL certificate you can use
+  extraArgs:
+    metrics-per-host: false
+
   # -- Required for use with CNI based kubernetes installations (such as ones set up by kubeadm),
   # since CNI and hostport don't mix yet. Can be deprecated once https://github.com/kubernetes/kubernetes/issues/23920
   # is merged
