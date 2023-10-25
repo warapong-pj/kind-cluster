@@ -56,3 +56,7 @@
 # install chaos mesh
 1. helm repo add chaos-mesh https://charts.chaos-mesh.org
 2. helm install chaos-mesh chaos-mesh/chaos-mesh --values values-chaos-mesh.yaml --namespace mgmt --version 2.5.2
+
+# install ingress nginx
+1. helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+2. helm install ingress-nginx ingress-nginx/ingress-nginx --values values-ingress-nginx.yaml --version 4.8.2
