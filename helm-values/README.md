@@ -37,7 +37,7 @@
 1. helm repo add hashicorp https://helm.releases.hashicorp.com
 2. helm install vault hashicorp/vault --values values-vault.yaml --version 0.24.1
 3. helm repo add secret-store-csi-driver https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
-4. helm install secrets-store-csi-driver secret-store-csi-driver/secrets-store-csi-driver --version 1.3.3
+4. helm install secrets-store-csi-driver secret-store-csi-driver/secrets-store-csi-driver --values values-secrets-store-csi-driver.yaml --version 1.3.3
 
 # install gatekeeper
 1. helm repo add gatekeeper https://open-policy-agent.github.io/gatekeeper/charts
