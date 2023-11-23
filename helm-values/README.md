@@ -42,7 +42,7 @@
 1. helm repo add hashicorp https://helm.releases.hashicorp.com
 2. helm install vault hashicorp/vault --values values-vault.yaml --version 0.24.1
 3. helm repo add secret-store-csi-driver https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
-4. helm install secrets-store-csi-driver secret-store-csi-driver/secrets-store-csi-driver --version 1.3.3
+4. helm install secrets-store-csi-driver secret-store-csi-driver/secrets-store-csi-driver --values values-secrets-store-csi-driver.yaml --version 1.3.3
 
 # install gatekeeper
 1. helm repo add gatekeeper https://open-policy-agent.github.io/gatekeeper/charts
@@ -62,9 +62,6 @@
 1. helm repo add chaos-mesh https://charts.chaos-mesh.org
 2. helm install chaos-mesh chaos-mesh/chaos-mesh --values values-chaos-mesh.yaml --namespace mgmt --version 2.5.2
 
-# install promtail and loki
-1. helm repo add minio-operator https://operator.min.io
-2. helm install minio-operator minio-operator/operator --version 5.0.10
-2. helm repo add grafana https://grafana.github.io/helm-charts
-2. helm install promtail grafana/promtail --namespace mgmt --version 6.14.1
-3. helm install loki grafana/loki --values values-loki.yaml --namespace mgmt --version 5.35.0
+# install ingress nginx
+1. helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+2. helm install ingress-nginx ingress-nginx/ingress-nginx --values values-ingress-nginx.yaml --version 4.8.2
