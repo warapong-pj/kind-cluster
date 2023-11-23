@@ -46,7 +46,7 @@ config:
         Host ${HOSTNAME}
         Logstash_Format On
         Logstash_Prefix kube
-        Logstash_DateFormat %Y-%m-%d-%H-%M
+        Logstash_DateFormat %Y-%m-%d
         Retry_Limit False
         HTTP_User ${USERNAME}
         HTTP_Passwd ${PASSWORD}
@@ -57,13 +57,13 @@ config:
     [OUTPUT]
         Name es
         Match host.*
-        Host quickstart-es-http
+        Host ${HOSTNAME}
         Logstash_Format On
         Logstash_Prefix node
-        Logstash_DateFormat %Y-%m-%d-%H-%M
+        Logstash_DateFormat %Y-%m-%d
         Retry_Limit False
-        HTTP_User elastic
-        HTTP_Passwd 0IvSoOx9l0qzc3n945Hj68Y9
+        HTTP_User ${USERNAME}
+        HTTP_Passwd ${PASSWORD}
         Suppress_Type_Name On
         tls On
         tls.verify Off
