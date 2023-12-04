@@ -33,6 +33,11 @@
 4. helm repo add fluent https://fluent.github.io/helm-charts
 5. helm install fluent-bit fluent/fluent-bit --values values-fluent-bit.yaml --namespace mgmt --version 0.37.0
 
+# install elastic-operator
+1. helm repo add elastic https://helm.elastic.co
+2. helm install elastic-operator elastic/eck-operator --namespace mgmt --create-namespace --version 2.10
+3. kubectl apply -f elastic-operator/ -n mgmt
+
 # install vault and secret store csi driver
 1. helm repo add hashicorp https://helm.releases.hashicorp.com
 2. helm install vault hashicorp/vault --values values-vault.yaml --version 0.24.1

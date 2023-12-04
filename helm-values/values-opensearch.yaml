@@ -1,3 +1,12 @@
+replicas: 1
+
+# If discovery.type in the opensearch configuration is set to "single-node",
+# this should be set to "true"
+# If "true", replicas will be forced to 1
+singleNode: true
+
+opensearchJavaOpts: "-Xmx1024M -Xms512M"
+
 resources:
   requests:
     cpu: "100m"
