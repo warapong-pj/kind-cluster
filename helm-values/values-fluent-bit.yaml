@@ -43,12 +43,13 @@ config:
     [OUTPUT]
         Name es
         Match kube.*
-        Host opensearch-cluster-master
+        Host ${HOSTNAME}
         Logstash_Format On
         Logstash_Prefix kube
+        Logstash_DateFormat %Y-%m-%d
         Retry_Limit False
-        HTTP_User admin
-        HTTP_Passwd admin
+        HTTP_User ${USERNAME}
+        HTTP_Passwd ${PASSWORD}
         Suppress_Type_Name On
         tls On
         tls.verify Off
@@ -56,12 +57,13 @@ config:
     [OUTPUT]
         Name es
         Match host.*
-        Host opensearch-cluster-master
+        Host ${HOSTNAME}
         Logstash_Format On
         Logstash_Prefix node
+        Logstash_DateFormat %Y-%m-%d
         Retry_Limit False
-        HTTP_User admin
-        HTTP_Passwd admin
+        HTTP_User ${USERNAME}
+        HTTP_Passwd ${PASSWORD}
         Suppress_Type_Name On
         tls On
         tls.verify Off
