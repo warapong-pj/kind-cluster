@@ -1,0 +1,52 @@
+loki:
+  commonConfig:
+    replication_factor: 1
+  storage:
+    type: 'filesystem'
+
+  # Should authentication be enabled
+  auth_enabled: false
+
+singleBinary:
+  replicas: 1
+
+monitoring:
+  # Dashboards for monitoring Loki
+  dashboards:
+    # -- If enabled, create configmap with dashboards for monitoring Loki
+    enabled: false
+
+  serviceMonitor:
+    # -- If enabled, ServiceMonitor resources for Prometheus Operator are created
+    enabled: false
+
+  # Self monitoring determines whether Loki should scrape its own logs.
+  # This feature currently relies on the Grafana Agent Operator being installed,
+  # which is installed by default using the grafana-agent-operator sub-chart.
+  # It will create custom resources for GrafanaAgent, LogsInstance, and PodLogs to configure
+  # scrape configs to scrape its own logs with the labels expected by the included dashboards.
+  selfMonitoring:
+    enabled: false
+
+    # Grafana Agent configuration
+    grafanaAgent:
+      # -- Controls whether to install the Grafana Agent Operator and its CRDs.
+      # Note that helm will not install CRDs if this flag is enabled during an upgrade.
+      # In that case install the CRDs manually from https://github.com/grafana/agent/tree/main/production/operator/crds
+      installOperator: false
+
+  lokiCanary:
+    enabled: false
+
+# Configuration for the memberlist service
+memberlist:
+  service:
+    publishNotReadyAddresses: false
+
+# Configuration for the gateway
+gateway:
+  # -- Specifies whether the gateway should be enabled
+  enabled: false
+
+test:
+  enabled: false
