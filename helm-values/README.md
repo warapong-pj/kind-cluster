@@ -33,10 +33,11 @@
 4. helm repo add fluent https://fluent.github.io/helm-charts
 5. helm install fluent-bit fluent/fluent-bit --values values-fluent-bit.yaml --namespace mgmt --version 0.37.0
 
-# install elastic-operator
-1. helm repo add elastic https://helm.elastic.co
-2. helm install elastic-operator elastic/eck-operator --namespace mgmt --create-namespace --version 2.10
-3. kubectl apply -f elastic-operator/ -n mgmt
+# install promtail and loki
+1. helm repo add grafana https://grafana.github.io/helm-charts
+2. helm install loki grafana/loki --values values-loki.yaml --namespace mgmt --version 5.36.2
+3. helm install promtail grafana/promtail --values values-promtail.yaml --namespace mgmt --version 6.14.1
+4. helm install grafana grafana/grafana --values values-grafana.yaml --namespace mgmt --version 6.59.3
 
 # install vault and secret store csi driver
 1. helm repo add hashicorp https://helm.releases.hashicorp.com
