@@ -16,7 +16,22 @@ nodes:
   - containerPort: 443
     hostPort: 443
     protocol: TCP
-
+#   labels:
+#     role: control-plane
+# - role: worker
+#   image: kindest/node:v1.27.1
+#   labels:
+#     role: data-plane
+#     tier: standard # standard/premium
+#     nodetype: generic # generic/gpu
+#     disktype: ssd # hdd/ssd
+# - role: worker
+#   image: kindest/node:v1.27.1
+#   labels:
+#     role: data-plane
+#     tier: standard # standard/premium
+#     nodetype: generic # generic/gpu
+#     disktype: ssd # hdd/ssd
 networking:
   disableDefaultCNI: true
   kubeProxyMode: none
