@@ -1389,7 +1389,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "Prometheus",
           "value": "PBFA97CFB590B2093"
         },
@@ -1400,6 +1400,7 @@
         "name": "datasource",
         "options": [],
         "query": "prometheus",
+        "queryValue": "",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1407,9 +1408,9 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "172.18.0.2:9100",
-          "value": "172.18.0.2:9100"
+          "selected": true,
+          "text": [],
+          "value": []
         },
         "datasource": {
           "type": "prometheus",
@@ -1444,7 +1445,6 @@
   "timepicker": {},
   "timezone": "",
   "title": "Node Resources",
-  "uid": "NUBGhrqnk",
-  "version": 3,
+  "version": 1,
   "weekStart": ""
 }
