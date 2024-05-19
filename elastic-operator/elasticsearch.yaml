@@ -3,7 +3,7 @@ kind: Elasticsearch
 metadata:
   name: quickstart
 spec:
-  version: 8.10.4
+  version: 8.13.4
   nodeSets:
   - name: default
     count: 1
@@ -19,7 +19,7 @@ spec:
           resources:
             requests:
               cpu: 0.1
-              memory: 1Gi
+              memory: 2Gi
             limits:
               cpu: 0.2
               memory: 4Gi
