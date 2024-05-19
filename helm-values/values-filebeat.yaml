@@ -1,6 +1,4 @@
 daemonset:
-  # Extra environment variables for Filebeat container.
-  secretMounts:
   extraEnvs:
   - name: LOGSTASH_HOST
     value: logstash-logstash
