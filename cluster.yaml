@@ -19,21 +19,21 @@ nodes:
   # labels:
   #   role: control-plane
 # - role: worker
-#   image: kindest/node:v1.28.6@sha256:b7e1cf6b2b729f604133c667a6be8aab6f4dde5bb042c1891ae248d9154f665b
+#   image: kindest/node:v1.29.2@sha256:51a1434a5397193442f0be2a297b488b6c919ce8a3931be0ce822606ea5ca245
 #   labels:
 #     role: data-plane
 #     tier: standard # standard/premium
 #     nodetype: generic # generic/gpu
 #     disktype: ssd # hdd/ssd
 # - role: worker
-#   image: kindest/node:v1.28.6@sha256:b7e1cf6b2b729f604133c667a6be8aab6f4dde5bb042c1891ae248d9154f665b
+#   image: kindest/node:v1.29.2@sha256:51a1434a5397193442f0be2a297b488b6c919ce8a3931be0ce822606ea5ca245
 #   labels:
 #     role: data-plane
 #     tier: standard # standard/premium
 #     nodetype: generic # generic/gpu
 #     disktype: ssd # hdd/ssd
 # - role: worker
-#   image: kindest/node:v1.28.6@sha256:b7e1cf6b2b729f604133c667a6be8aab6f4dde5bb042c1891ae248d9154f665b
+#   image: kindest/node:v1.29.2@sha256:51a1434a5397193442f0be2a297b488b6c919ce8a3931be0ce822606ea5ca245
 #   labels:
 #     role: data-plane
 #     tier: standard # standard/premium
