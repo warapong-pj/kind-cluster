@@ -53,3 +53,10 @@ extraEnvs:
       secretKeyRef:
         name: elasticsearch-master-credentials
         key: password
+
+service:
+  ports:
+    - name: beats
+      port: 5044
+      protocol: TCP
+      targetPort: 5044
