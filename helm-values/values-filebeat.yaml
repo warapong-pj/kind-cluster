@@ -38,7 +38,7 @@ daemonset:
                 logs_path: "/var/log/containers/"
 
       output.logstash:
-         hosts: ["${LOGSTASH_HOST}:${LOGSTASH_PORT}"]
+        hosts: ["${LOGSTASH_HOST}:${LOGSTASH_PORT}"]
 
       # output.elasticsearch:
       #   host: "${NODE_NAME}"
@@ -49,3 +49,7 @@ daemonset:
       #   ssl.verification_mode: none
       #   ssl.certificate_authorities: []
       #   index: "myapp-%{[agent.version]}-%{+yyyy.MM.dd}"
+
+  # A list of secrets and their paths to mount inside the pod
+  # This is useful for mounting certificates for security other sensitive values
+  secretMounts: []
