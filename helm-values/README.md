@@ -33,6 +33,10 @@
 4. helm repo add fluent https://fluent.github.io/helm-charts
 5. helm install fluent-bit fluent/fluent-bit --values values-fluent-bit.yaml --namespace mgmt --version 0.39.1
 
+# install filebeat and logstash
+1. helm install filebeat elastic/filebeat --values ./values-filebeat.yaml --namespace mgmt --version 8.5.1
+2. helm install logstash elastic/logstash --values ./values-logstash.yaml --namespace mgmt --version 8.5.1
+
 # install promtail and loki
 1. helm repo add grafana https://grafana.github.io/helm-charts
 2. helm install loki grafana/loki --values values-loki.yaml --namespace mgmt --version 5.36.2
