@@ -1,0 +1,55 @@
+# Allows you to add any config files in /usr/share/logstash/config/
+# such as logstash.yml and log4j2.properties
+#
+# Note that when overriding logstash.yml, `http.host: 0.0.0.0` should always be included
+# to make default probes work.
+logstashConfig:
+  logstash.yml: |
+    xpack.monitoring.enabled: false
+    http.host: 0.0.0.0
+# Allows you to add any pipeline files in /usr/share/logstash/pipeline/
+### ***warn*** there is a hardcoded logstash.conf in the image, override it first
+logstashPipeline:
+  logstash.conf: |
+    input {
+      beats {
+        port => 5044
+      }
+    }
+    
+    output {
+      # stdout { 
+      #   codec  => rubydebug {
+      #   metadata => true
+      #   }
+      # }
+      # file {
+      #     path => "/tmp/temp-output-logstash.json"
+      # }
+      
+      elasticsearch {
+        hosts => ["http://${ELASTICSEARCH_USERNAME}:${ELASTICSEARCH_PASSWORD}@${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}"]
+        manage_template => false
+        index => "k8s-%{[kubernetes][namespace]}-%{+yyyy.MM.dd}"
+        document_type => "%{[@metadata][type]}"
+        action => "create"
+      }
+    }
+# Extra environment variables to append to this nodeGroup
+# This will be appended to the current 'env:' key. You can use any of the kubernetes env
+# syntax here
+extraEnvs:
+  - name: ELASTICSEARCH_HOST
+    value: quickstart-es-http
+  - name: ELASTICSEARCH_PORT
+    value: "9200"
+  - name: "ELASTICSEARCH_USERNAME"
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: username
+  - name: "ELASTICSEARCH_PASSWORD"
+    valueFrom:
+      secretKeyRef:
+        name: elasticsearch-master-credentials
+        key: password
