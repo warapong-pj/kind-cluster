@@ -1,6 +1,6 @@
 # install cilium
 1. helm repo add cilium https://helm.cilium.io/
-2. helm install cilium cilium/cilium --values values-cilium.yaml --namespace kube-system --version 1.14.2
+2. helm install cilium cilium/cilium --values values-cilium.yaml --namespace kube-system --version 1.15.5
 
 # install argo cd and argo rollouts
 1. kubectl create namespace mgmt
