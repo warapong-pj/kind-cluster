@@ -7,8 +7,18 @@ server:
   extensions:
     # -- Enable support for Argo UI extensions
     enabled: true
+
+    # -- Extensions for Argo CD
+    # @default -- `[]` (See [values.yaml])
+    ## Ref: https://github.com/argoproj-labs/argocd-extension-metrics#install-ui-extension
+    extensionList:
+     - name: argo-rollouts
+       env:
+         - name: EXTENSION_URL
+           value: https://github.com/argoproj-labs/rollout-extension/releases/download/v0.3.5/extension.tar
+
   metrics:
-    enabled: true
+    enabled: false
     service:
       annotations:
         prometheus.io/scrape: "true"
@@ -17,7 +27,7 @@ server:
 
 controller:
   metrics:
-    enabled: true
+    enabled: false
     service:
       annotations:
         prometheus.io/scrape: "true"
@@ -26,7 +36,7 @@ controller:
 
 repoServer:
   metrics:
-    enabled: true
+    enabled: false
     service:
       annotations:
         prometheus.io/scrape: "true"
