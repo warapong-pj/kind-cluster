@@ -54,6 +54,12 @@
 ### policy library
 - https://open-policy-agent.github.io/gatekeeper-library/website/
 
+# install kyverno
+1. helm repo add kyverno https://kyverno.github.io/kyverno/
+2. helm install kyverno kyverno/kyverno --namespace mgmt --version 3.2.6
+### policy library
+- https://open-policy-agent.github.io/gatekeeper-library/website/
+
 # install actions-runner-controller
 1. helm repo add cert-manager https://charts.jetstack.io
 2. helm install cert-manager cert-manager/cert-manager --values values-cert-manager.yaml --namespace mgmt --version 1.13.0
