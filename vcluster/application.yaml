@@ -26,7 +26,7 @@ spec:
   # Destination cluster and namespace to deploy the application
   destination:
     # cluster API URL
-    server: https://vc2.vcluster-vc2:443
+    server: https://vc1.vcluster-vc1:443
     # or cluster name
     # name: in-cluster
     # The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
