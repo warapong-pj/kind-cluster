@@ -1,6 +1,6 @@
 # install cilium
 1. helm repo add cilium https://helm.cilium.io/
-2. helm install cilium cilium/cilium --values values-cilium.yaml --namespace kube-system --version 1.15.5
+2. helm install cilium cilium/cilium --values values-cilium.yaml --namespace kube-system --version 1.15.8
 
 # install argo cd and argo rollouts
 1. helm repo add argo https://argoproj.github.io/argo-helm
