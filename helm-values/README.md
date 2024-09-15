@@ -4,8 +4,8 @@
 
 # install argo cd and argo rollouts
 1. helm repo add argo https://argoproj.github.io/argo-helm
-2. helm install argo-cd argo/argo-cd --values values-argo-cd.yaml --create-namespace --namespace mgmt --version 6.10.2
-3. helm install argo-rollouts argo/argo-rollouts --values values-argo-rollouts.yaml --namespace mgmt --version 2.35.3
+2. helm install argo-cd argo/argo-cd --values values-argo-cd.yaml --create-namespace --namespace mgmt --version 7.4.7
+3. helm install argo-rollouts argo/argo-rollouts --values values-argo-rollouts.yaml --namespace mgmt --version 2.37.6
 4. kubectl apply -n mgmt -f https://raw.githubusercontent.com/argoproj-labs/rollout-extension/v0.2.1/manifests/install.yaml
 5. kubectl rollout restart deployment argo-cd-argocd-server -n mgmt
 
