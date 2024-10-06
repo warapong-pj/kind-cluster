@@ -27,3 +27,8 @@
 
 ### note
 - kubectl port-forward service/argo-cd-argocd-server -n mgmt 8080:443
+
+---
+
+### build kernel to support cilium on wsl2
+- reference -> https://wsl.dev/wslcilium/
