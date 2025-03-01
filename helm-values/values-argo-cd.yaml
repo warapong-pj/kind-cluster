@@ -13,9 +13,9 @@ server:
     ## Ref: https://github.com/argoproj-labs/argocd-extension-metrics#install-ui-extension
     extensionList:
     - name: argo-rollouts
-       env:
-        - name: EXTENSION_URL
-          value: https://github.com/argoproj-labs/rollout-extension/releases/download/v0.3.4/extension.tar
+      env:
+      - name: EXTENSION_URL
+        value: https://github.com/argoproj-labs/rollout-extension/releases/download/v0.3.4/extension.tar
 
 
   metrics:
