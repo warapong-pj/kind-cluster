@@ -3,17 +3,6 @@ k8sServiceHost: "kind-control-plane"
 # -- (string) Kubernetes service port
 k8sServicePort: "6443"
 
-# -- Configure the kube-proxy replacement in Cilium BPF datapath
-# Valid options are "true", "false", "disabled" (deprecated), "partial" (deprecated), "strict" (deprecated).
-# ref: https://docs.cilium.io/en/stable/network/kubernetes/kubeproxy-free/
-kubeProxyReplacement: "true"
-
-# -- healthz server bind address for the kube-proxy replacement.
-# To enable set the value to '0.0.0.0:10256' for all ipv4
-# addresses and this '[::]:10256' for all ipv6 addresses.
-# By default it is disabled.
-kubeProxyReplacementHealthzBindAddr: ""
-
 externalIPs:
   # -- Enable ExternalIPs service support.
   enabled: true
@@ -33,16 +22,43 @@ ipam:
   mode: "kubernetes"
 
 operator:
-  # -- Enable the cilium-operator component (required).
-  enabled: true
+  # # -- Enable the cilium-operator component (required).
+  # enabled: true
 
   # -- Number of replicas to run for the cilium-operator deployment
   replicas: 1
 
 hubble:
-  # -- Enable Hubble (true by default).
-  enabled: true
+  # # -- Enable Hubble (true by default).
+  # enabled: true
 
   relay:
     # -- Enable Hubble Relay (requires hubble.enabled=true)
     enabled: true
+
+  # -- Hubble metrics configuration.
+  # See https://docs.cilium.io/en/stable/observability/metrics/#hubble-metrics
+  # for more comprehensive documentation about Hubble metrics.
+  metrics:
+    # @schema
+    # type: [null, array]
+    # @schema
+    # -- Configures the list of metrics to collect. If empty or null, metrics
+    # are disabled.
+    # Example:
+    #
+    #   enabled:
+    #   - dns:query;ignoreAAAA
+    #   - drop
+    #   - tcp
+    #   - flow
+    #   - icmp
+    #   - http
+    #
+    # You can specify the list of metrics from the helm CLI:
+    #
+    #   --set hubble.metrics.enabled="{dns:query;ignoreAAAA,drop,tcp,flow,icmp,http}"
+    #
+    enabled: [dns:query;ignoreAAAA,drop,tcp,flow,icmp,http]
+    # -- Enables exporting hubble metrics in OpenMetrics format.
+    enableOpenMetrics: true
