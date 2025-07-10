@@ -4,8 +4,8 @@
 
 # install argo cd and argo rollouts
 1. helm repo add argo https://argoproj.github.io/argo-helm
-2. helm install argo-cd argo/argo-cd --values values-argo-cd.yaml --create-namespace --namespace mgmt --version 7.7.23
-3. helm install argo-rollouts argo/argo-rollouts --values values-argo-rollouts.yaml --namespace mgmt --version 2.38.2
+2. helm install argo-cd argo/argo-cd --values values-argo-cd.yaml --namespace mgmt --version 8.1.3
+3. helm install argo-rollouts argo/argo-rollouts --values values-argo-rollouts.yaml --namespace mgmt --version 2.40.1
 4. kubectl rollout restart deployment argo-cd-argocd-server -n mgmt
 
 # install metrics-server
@@ -14,7 +14,7 @@
 
 # install node-exporter, kube-state-metrics and prometheus
 1. helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-2. helm install prometheus-node-exporter prometheus-community/prometheus-node-exporter --namespace mgmt --version 4.47.1
+2. helm install node-exporter prometheus-community/prometheus-node-exporter --namespace mgmt --version 4.47.1
 3. helm install kube-state-metrics prometheus-community/kube-state-metrics --namespace mgmt --version 6.1.0
 4. helm install prometheus prometheus-community/prometheus --values values-prometheus.yaml --namespace mgmt --version 27.23.0
 5. helm repo add grafana https://grafana.github.io/helm-charts
