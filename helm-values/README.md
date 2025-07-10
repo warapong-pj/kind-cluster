@@ -14,11 +14,11 @@
 
 # install node-exporter, kube-state-metrics and prometheus
 1. helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-2. helm install prometheus-node-exporter prometheus-community/prometheus-node-exporter --namespace mgmt --version 4.42.0
-3. helm install kube-state-metrics prometheus-community/kube-state-metrics --namespace mgmt --version 5.27.0
-4. helm install prometheus prometheus-community/prometheus --values values-prometheus.yaml --namespace mgmt --version 25.30.2
+2. helm install prometheus-node-exporter prometheus-community/prometheus-node-exporter --namespace mgmt --version 4.47.1
+3. helm install kube-state-metrics prometheus-community/kube-state-metrics --namespace mgmt --version 6.1.0
+4. helm install prometheus prometheus-community/prometheus --values values-prometheus.yaml --namespace mgmt --version 27.23.0
 5. helm repo add grafana https://grafana.github.io/helm-charts
-6. helm install grafana grafana/grafana --values values-grafana.yaml --namespace mgmt --version 8.5.12
+6. helm install grafana grafana/grafana --values values-grafana.yaml --namespace mgmt --version 9.2.10
 
 # install alertmanager
 1. helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
