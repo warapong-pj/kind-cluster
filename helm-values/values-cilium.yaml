@@ -3,6 +3,11 @@ k8sServiceHost: "kind-control-plane"
 # -- (string) Kubernetes service port
 k8sServicePort: "6443"
 
+# -- Configure the kube-proxy replacement in Cilium BPF datapath
+# Valid options are "true" or "false".
+# ref: https://docs.cilium.io/en/stable/network/kubernetes/kubeproxy-free/
+kubeProxyReplacement: "true"
+
 externalIPs:
   # -- Enable ExternalIPs service support.
   enabled: true
