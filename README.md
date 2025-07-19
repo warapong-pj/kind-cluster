@@ -32,3 +32,59 @@
 
 ### build kernel to support cilium on wsl2
 - reference -> https://wsl.dev/wslcilium/
+
+---
+
+
+---
+
+// Uses Declarative syntax to run commands inside a container.
+pipeline {
+    agent {
+        kubernetes {
+            yaml '''
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: shell
+    image: ubuntu
+    command:
+    - sleep
+    args:
+    - infinity
+    #securityContext:
+    #  # ubuntu runs as root by default, it is recommended or even mandatory in some environments (such as pod security admission "restricted") to run as a non-root user.
+    #  runAsUser: 1000
+'''
+            defaultContainer 'shell'
+            retries 2
+        }
+    }
+    stages {
+        stage('poc-stage') {
+            steps {
+                withKubeConfig([
+                    credentialsId: 'KIND_CLUSTER', serverUrl: 'https://kubernetes.default.svc'
+                ]) {
+                    sh """
+                    #!/bin/sh
+                    
+                    set -e
+                    
+                    apt-get update
+                    apt-get install -y curl
+                    
+                    curl -s -L "https://dl.k8s.io/release/v1.33.2/bin/linux/amd64/kubectl" -O /usr/local/bin/kubectl
+                    chmod +x /usr/local/bin/kubectl
+                    curl -s -L "https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64" -O /usr/local/bin/yq
+                    chmod +x /usr/local/bin/yq
+                    
+                    yq --version
+                    kubectl config get-contexts
+                    """
+                }
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@ apiVersion: kind.x-k8s.io/v1alpha4
 kind: Cluster
 nodes:
 - role: control-plane
-  image: kindest/node:v1.31.6@sha256:28b7cbb993dfe093c76641a0c95807637213c9109b761f1d422c2400e22b8e87
+  image: kindest/node:v1.33.1@sha256:050072256b9a903bd914c0b2866828150cb229cea0efe5892e2b644d5dd3b34f
   # kubeadmConfigPatches:
   # - |
   #   kind: InitConfiguration
@@ -19,7 +19,7 @@ nodes:
 #   labels:
 #     role: control-plane
 # - role: worker
-#   image: kindest/node:v1.31.6@sha256:28b7cbb993dfe093c76641a0c95807637213c9109b761f1d422c2400e22b8e87
+#   image: kindest/node:v1.33.1@sha256:050072256b9a903bd914c0b2866828150cb229cea0efe5892e2b644d5dd3b34f
 #   labels:
 #     role: data-plane
 #     zone: az-a
@@ -27,7 +27,7 @@ nodes:
 #     nodetype: generic # generic/gpu
 #     disktype: ssd # hdd/ssd
 # - role: worker
-#   image: kindest/node:v1.31.6@sha256:28b7cbb993dfe093c76641a0c95807637213c9109b761f1d422c2400e22b8e87
+#   image: kindest/node:v1.33.1@sha256:050072256b9a903bd914c0b2866828150cb229cea0efe5892e2b644d5dd3b34f
 #   labels:
 #     role: data-plane
 #     zone: az-b
@@ -35,7 +35,7 @@ nodes:
 #     nodetype: generic # generic/gpu
 #     disktype: ssd # hdd/ssd
 # - role: worker
-#   image: kindest/node:v1.31.6@sha256:28b7cbb993dfe093c76641a0c95807637213c9109b761f1d422c2400e22b8e87
+#   image: kindest/node:v1.33.1@sha256:050072256b9a903bd914c0b2866828150cb229cea0efe5892e2b644d5dd3b34f
 #   labels:
 #     role: data-plane
 #     zone: az-c
