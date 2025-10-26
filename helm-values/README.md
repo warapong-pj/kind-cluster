@@ -37,9 +37,9 @@
 
 # install promtail and loki
 1. helm repo add grafana https://grafana.github.io/helm-charts
-2. helm install loki grafana/loki --values values-loki.yaml --namespace mgmt --version 5.36.2
-3. helm install promtail grafana/promtail --values values-promtail.yaml --namespace mgmt --version 6.14.1
-4. helm install grafana grafana/grafana --values values-grafana.yaml --namespace mgmt --version 6.59.3
+2. helm install loki grafana/loki --values values-loki.yaml --namespace mgmt --version 6.44.0
+3. helm install promtail grafana/promtail --values values-promtail.yaml --namespace mgmt --version 6.17.0
+4. helm install grafana grafana/grafana --values values-grafana.yaml --namespace mgmt --version 9.2.10
 
 # install vault and secret store csi driver
 1. helm repo add hashicorp https://helm.releases.hashicorp.com
