@@ -6,7 +6,14 @@ k8sServicePort: "6443"
 # -- Configure the kube-proxy replacement in Cilium BPF datapath
 # Valid options are "true" or "false".
 # ref: https://docs.cilium.io/en/stable/network/kubernetes/kubeproxy-free/
-kubeProxyReplacement: "true"
+kubeProxyReplacement: true
+
+gatewayAPI:
+  # -- Enable support for Gateway API in cilium
+  # This will automatically set enable-envoy-config as well.
+  enabled: true
+
+
 
 externalIPs:
   # -- Enable ExternalIPs service support.
